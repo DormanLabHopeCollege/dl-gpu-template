@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "uv run current file",
+      "type": "shell",
+      "command": "uv run python \"${file}\"",
+      "group": "build",
+      "presentation": { "reveal": "always", "clear": true }
+    },
+    {
+      "label": "uv sync",
+      "type": "shell",
+      "command": "uv sync"
+    },
+    {
+      "label": "uv sync (locked)",
+      "type": "shell",
+      "command": "uv sync --locked"
+    }
+  ]
+}

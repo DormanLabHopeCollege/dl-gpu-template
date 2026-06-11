@@ -1,0 +1,40 @@
+[project]
+name = "dl-gpu-template"
+version = "0.1.0"
+description = "Dorman Lab PyTorch GPU project"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "h5py",
+  "ipykernel",
+  "ipympl",
+  "ipywidgets",
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "scipy",
+  "seaborn",
+  "torch",
+  "tqdm"
+]
+
+[dependency-groups]
+dev = [
+  "pytest",
+  "ruff"
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
